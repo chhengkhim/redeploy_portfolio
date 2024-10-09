@@ -5,3 +5,5 @@ PSD filter=lfs diff=lfs merge=lfs -text
 files filter=lfs diff=lfs merge=lfs -text
 \# filter=lfs diff=lfs merge=lfs -text
 *.yourfileextension filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
