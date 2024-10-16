@@ -40,7 +40,7 @@ const AboutSection = () => {
             data-aos="fade-right" // Animation for the image
           />
           <div
-            className="flex flex-col gap-5 rounded-2xl border border-solid border-black p-10 sm:p-20 bg-white shadow-lg shadow-cyan-400/50 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50" // Added background and shadow
+            className="flex flex-col gap-5 rounded-2xl p-10 sm:p-20 bg-white shadow-lg shadow-cyan-400/50 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50" // Added background and shadow
             data-aos="fade-left" // Animation for the mission section
           >
             <h2 className="text-3xl font-bold md:text-5xl">Our Mission</h2>
