@@ -43,7 +43,7 @@ const AboutSection = () => {
             className="flex flex-col gap-5 rounded-2xl p-10 sm:p-20 bg-white shadow-lg shadow-cyan-400/50 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50" // Added background and shadow
             data-aos="fade-left" // Animation for the mission section
           >
-            <h2 className="text-3xl font-bold md:text-5xl">Our Mission</h2>
+            <h2 className="text-3xl font-bold md:text-5xl">About</h2>
             <p className="text-sm text-gray-500 sm:text-base">
               I’m passionate about building excellent software that enhances the lives of those around me.
               I specialize in creating solutions for clients ranging from individuals and small businesses to large enterprise corporations.

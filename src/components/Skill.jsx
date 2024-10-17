@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
+import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import 'aos/dist/aos.css'; // Import AOS styles
+import FlashIcon from '../assets/flash.svg';
 
 import HTML from '../assets/html.png';
 import CSS from '../assets/css.png';
@@ -11,6 +13,8 @@ import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
 import Bootstrap from '../assets/boostrap.png';
 import Sql from '../assets/sql.png';
+import Js from '../assets/js.png';
+import Cpp from "../assets/c++.png"
 
 const Skills = () => {
   const skills = [
@@ -23,6 +27,8 @@ const Skills = () => {
     { img: ReactLogo, name: "React.js" },
     { img: Tailwind, name: "Tailwind" },
     { img: Sql, name: "Sql"},
+    { img: Js, name: "Java Script"},
+    { img: Cpp, name: "C++"},
   ];
 
   useEffect(() => {
@@ -31,17 +37,28 @@ const Skills = () => {
 
   return (
     <div name="skills" id="skills" className='w-full h-auto py-16 text-gray-400'>
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-        <div className='mb-8 text-center' data-aos="fade-up">
-          <p className='text-5xl font-extrabold inline border-b-4 border-cyan-500 mb-4 text-gray'>Skills</p>
-          <p className='text-lg mt-4 text-gray-400'>Technologies I have worked with</p>
-        </div>
+      <div className="text-center mb-8">
+        <h2
+          className="text-3xl font-bold md:text-5xl text-gray-400"
+          data-aos="fade-up" // Animation for the title
+        >
+          Skills
+        </h2>
+        <div className="w-24 h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
+        <p
+          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto" // Center alignment
+          data-aos="fade-up" // Animation for the paragraph
+          data-aos-delay="100" // Slight delay for staggered effect
+        >
+          Technologies I have worked with.
+        </p>
+      </div>
 
         <div className='grid grid-cols-2 gap-8 text-center py-8 sm:grid-cols-3 md:grid-cols-4'>
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              className='bg-gray-100 p-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-400'
+              className='bg-gray-100 p-6 rounded-lg transform hover:scale-105 hover:bg-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50'
               data-aos="fade-up" // Animation for each skill card
               data-aos-delay={index * 100} // Stagger effect for each skill
             >
@@ -50,8 +67,74 @@ const Skills = () => {
             </div>
           ))}
         </div>
+        <footer className="block mt-10">
+        <div className="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
+          <div className="flex-col flex items-center" data-aos="fade-up" data-aos-delay="300">
+            <a href="#home" className="flex items-center font-extrabold text-cyan-400">
+              <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" />
+              <span className="text-xl">Atomic</span>
+            </a>
+            <div className="text-center font-semibold">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
+              >
+                About
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
+              >
+                Work
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
+              >
+                Skills
+              </a>
+            </div>
+            <div className="mb-8 mt-8 border-b border-gray-300 w-48"></div>
+            <div className="flex items-center space-x-4 mb-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
+                <FaLinkedin size={24} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
+                <FaFacebook size={24} />
+              </a>
+            </div>
+            <p className="text-sm sm:text-base">
+              © Date 09/10/2024. By PHOK PISETHSAMBO.
+            </p>
+          </div>
+        </div>
+      </footer>
       </div>
-    </div>
   );
 };
 

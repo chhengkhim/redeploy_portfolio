@@ -58,7 +58,7 @@ const Home = () => {
             <img
               src={profileImage}
               alt="Profile"
-              className="mx-auto w-48 sm:w-64 md:w-80 lg:w-96 rounded-full shadow-lg"
+              className="mx-auto w-48 sm:w-64 md:w-80 lg:w-96 rounded-full shadow-lg shadow-cyan-400 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50"
               data-aos="zoom-in" // Zoom-in animation for the image
             />
           </div>

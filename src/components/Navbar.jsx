@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 import FlashIcon from '../assets/flash.svg'; // Update path as necessary
 
 const Navbar = () => {
@@ -11,19 +12,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const scrollToSection = (section) => {
-    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-    setActiveSection(section); // Set the active section
-    setIsOpen(false); // Close the menu after selecting a section
-  };
-
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full h-16 bg-cyan-200 shadow-lg border-b-5 border-gray-200 px-5 rounded-full">      
-    {/* Logo */}
-    <a href="#home" className="flex items-center font-extrabold text-black">
-      <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" /> {/* SVG icon */}
-      <span className="text-xl">Atomic</span>
-    </a>
+    <nav className="sticky top-0 z-50 flex items-center justify-between w-full h-16 bg-cyan-200 shadow-lg border-b-5 border-gray-200 px-5 rounded-full">
+      {/* Logo */}
+      <Link to="home" smooth={true} duration={500} className="flex items-center font-extrabold text-black cursor-pointer">
+        <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" /> {/* SVG icon */}
+        <span className="text-xl">Atomic</span>
+      </Link>
 
       {/* Hamburger Menu for Mobile */}
       <div className="md:hidden">
@@ -37,42 +32,54 @@ const Navbar = () => {
 
       {/* Menu Links */}
       <div className={`hidden md:flex flex-grow justify-center space-x-6`}>
-        <a
-          href="#home"
-          onClick={() => scrollToSection('home')}
-          className={`px-4 py-2 text-black transition-colors duration-300 ${
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          offset={-70} // Adjust the scroll offset to ensure the section aligns correctly
+          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
             activeSection === 'home' ? 'border-b-2 border-black' : ''
           }`}
+          onClick={() => setActiveSection('home')}
         >
           Home
-        </a>
-        <a
-          href="#about"
-          onClick={() => scrollToSection('about')}
-          className={`px-4 py-2 text-black transition-colors duration-300 ${
+        </Link>
+        <Link
+          to="about"
+          smooth={true}
+          duration={500}
+          offset={-70}
+          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
             activeSection === 'about' ? 'border-b-2 border-black' : ''
           }`}
+          onClick={() => setActiveSection('about')}
         >
           About
-        </a>
-        <a
-          href="#work"
-          onClick={() => scrollToSection('work')}
-          className={`px-4 py-2 text-black transition-colors duration-300 ${
+        </Link>
+        <Link
+          to="work"
+          smooth={true}
+          duration={500}
+          offset={-70}
+          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
             activeSection === 'work' ? 'border-b-2 border-black' : ''
           }`}
+          onClick={() => setActiveSection('work')}
         >
           Work
-        </a>
-        <a
-          href="#skills"
-          onClick={() => scrollToSection('skills')}
-          className={`px-4 py-2 text-black transition-colors duration-300 ${
+        </Link>
+        <Link
+          to="skills"
+          smooth={true}
+          duration={500}
+          offset={-70}
+          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
             activeSection === 'skills' ? 'border-b-2 border-black' : ''
           }`}
+          onClick={() => setActiveSection('skills')}
         >
           Skills
-        </a>
+        </Link>
       </div>
 
       {/* Social Icons */}
@@ -94,54 +101,66 @@ const Navbar = () => {
           <button className="absolute top-4 right-4" onClick={toggleMenu}>
             <FaTimes size={24} />
           </button>
-          <a
-            href="#home"
-            onClick={() => {
-              scrollToSection('home');
-              toggleMenu();
-            }}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 ${
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
               activeSection === 'home' ? 'border-b-2 border-cyan-400' : ''
             }`}
+            onClick={() => {
+              setActiveSection('home');
+              toggleMenu();
+            }}
           >
             Home
-          </a>
-          <a
-            href="#about"
-            onClick={() => {
-              scrollToSection('about');
-              toggleMenu();
-            }}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 ${
+          </Link>
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
               activeSection === 'about' ? 'border-b-2 border-cyan-400' : ''
             }`}
+            onClick={() => {
+              setActiveSection('about');
+              toggleMenu();
+            }}
           >
             About
-          </a>
-          <a
-            href="#work"
-            onClick={() => {
-              scrollToSection('work');
-              toggleMenu();
-            }}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 ${
+          </Link>
+          <Link
+            to="work"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
               activeSection === 'work' ? 'border-b-2 border-cyan-400' : ''
             }`}
-          >
-            Work
-          </a>
-          <a
-            href="#skills"
             onClick={() => {
-              scrollToSection('skills');
+              setActiveSection('work');
               toggleMenu();
             }}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 ${
+          >
+            Work
+          </Link>
+          <Link
+            to="skills"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
               activeSection === 'skills' ? 'border-b-2 border-cyan-400' : ''
             }`}
+            onClick={() => {
+              setActiveSection('skills');
+              toggleMenu();
+            }}
           >
             Skills
-          </a>
+          </Link>
         </div>
       )}
     </nav>
