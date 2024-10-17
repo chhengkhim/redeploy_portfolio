@@ -77,15 +77,15 @@ const App = () => {
       <div className="text-center mb-8">
         <h2
           className="text-3xl font-bold md:text-5xl text-gray-400"
-          data-aos="fade-up"
+          data-aos="fade-up" // Animation for the title
         >
-          Work
+          Works
         </h2>
-        <div className="w-24 h-1 bg-cyan-400 mx-auto mb-4" data-aos="fade-up" data-aos-delay="100" />
+        <div className="w-24 h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         <p
-          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="200"
+          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto" // Center alignment
+          data-aos="fade-up" // Animation for the paragraph
+          data-aos-delay="100" // Slight delay for staggered effect
         >
           Hi, I am Phok Pisethsambo, nice to meet you. Please take a look around.
         </p>
