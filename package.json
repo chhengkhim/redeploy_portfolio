@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
+    "@redux-devtools/core": "^4.0.0",
+    "@redux-devtools/instrument": "^2.2.0",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "core-js": "^3.38.1",
     "framer-motion": "^11.11.9",
     "lucide": "^0.453.0",
     "lucide-react": "^0.451.0",
