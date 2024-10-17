@@ -1,8 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
+import { Link, scroller } from 'react-scroll'; // Import Link and scroller from react-scroll
 import FlashIcon from '../assets/flash.svg'; // Update path as necessary
+import { ModeToggle } from './mode-toggle'; // Assuming this controls dark mode
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,155 +12,100 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between w-full h-16 bg-cyan-200 shadow-lg border-b-5 border-gray-200 px-5 rounded-full">
-      {/* Logo */}
-      <Link to="home" smooth={true} duration={500} className="flex items-center font-extrabold text-black cursor-pointer">
-        <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" /> {/* SVG icon */}
-        <span className="text-xl">Atomic</span>
-      </Link>
+  // This function handles scrolling and updating the active section
+  const handleSetActive = (section) => {
+    setActiveSection(section);
+  };
 
-      {/* Hamburger Menu for Mobile */}
-      <div className="md:hidden">
+  return (
+    <nav className="max-w-6xl mx-auto p-8 text-center sticky top-0 z-50 flex items-center gap-3 justify-between w-full h-16 bg-cyan-200 dark:bg-slate-500 shadow-none border-none rounded-full">
+      {/* Logo and Dark Mode Toggle for Desktop */}
+      <div className="flex items-center gap-3">
+        {/* Logo */}
+        <Link to="home" smooth={true} duration={500} className="flex items-center font-extrabold text-black dark:text-white cursor-pointer">
+          <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" /> {/* SVG icon */}
+          <span className="text-xl">Atomic</span>
+        </Link>
+
+        {/* Dark Mode Toggle for Desktop (Visible on Desktop) */}
+        <div className="hidden md:block">
+          <ModeToggle className="p-2 rounded-full bg-gray-100 dark:bg-black focus:outline-none hover:bg-gray-200 dark:hover:bg-black" />
+        </div>
+      </div>
+
+      {/* Hamburger Menu and Dark Mode Toggle for Mobile */}
+      <div className="flex items-center space-x-3 md:hidden">
+        {/* Dark Mode Toggle (Visible on Mobile) */}
+        <ModeToggle className="p-2 rounded-full bg-gray-100 dark:bg-black focus:outline-none hover:bg-gray-200 dark:hover:bg-black" />
+
+        {/* Hamburger Menu for Mobile */}
         <button
-          className="text-2xl p-2 bg-gray-100 rounded-md focus:outline-none hover:bg-gray-200"
+          className="text-2xl p-2 bg-gray-100 dark:bg-black text-black dark:text-white rounded-full focus:outline-none hover:bg-gray-200 dark:hover:bg-black"
           onClick={toggleMenu}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
-      {/* Menu Links */}
+      {/* Menu Links for Desktop */}
       <div className={`hidden md:flex flex-grow justify-center space-x-6`}>
-        <Link
-          to="home"
-          smooth={true}
-          duration={500}
-          offset={-70} // Adjust the scroll offset to ensure the section aligns correctly
-          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
-            activeSection === 'home' ? 'border-b-2 border-black' : ''
-          }`}
-          onClick={() => setActiveSection('home')}
-        >
-          Home
-        </Link>
-        <Link
-          to="about"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
-            activeSection === 'about' ? 'border-b-2 border-black' : ''
-          }`}
-          onClick={() => setActiveSection('about')}
-        >
-          About
-        </Link>
-        <Link
-          to="work"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
-            activeSection === 'work' ? 'border-b-2 border-black' : ''
-          }`}
-          onClick={() => setActiveSection('work')}
-        >
-          Work
-        </Link>
-        <Link
-          to="skills"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className={`px-4 py-2 text-black transition-colors duration-300 cursor-pointer ${
-            activeSection === 'skills' ? 'border-b-2 border-black' : ''
-          }`}
-          onClick={() => setActiveSection('skills')}
-        >
-          Skills
-        </Link>
+        {['home', 'about', 'work', 'skills'].map((section) => (
+          <Link
+            key={section}
+            to={section}
+            smooth={true}
+            duration={500}
+            offset={-70}
+            spy={true} // Track the scroll position
+            activeClass="active" // Class when active
+            onSetActive={handleSetActive} // Updates activeSection when scrolled
+            className={`px-4 py-2 text-black dark:text-white transition-colors duration-300 cursor-pointer ${
+              activeSection === section ? 'border-b-2 border-black dark:border-cyan-400' : ''
+            }`}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </Link>
+        ))}
       </div>
 
       {/* Social Icons */}
       <div className="hidden md:flex items-center space-x-4 ml-auto">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
-          <FaGithub size={24} />
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
-          <FaLinkedin size={24} />
-        </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
-          <FaFacebook size={24} />
-        </a>
+        {[{ link: 'https://github.com', icon: FaGithub }, { link: 'https://linkedin.com', icon: FaLinkedin }, { link: 'https://facebook.com', icon: FaFacebook }].map((social, index) => (
+          <a
+            key={index}
+            href={social.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 dark:text-cyan-400 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300"
+          >
+            {React.createElement(social.icon, { size: 24 })}
+          </a>
+        ))}
       </div>
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center space-y-4">
+        <div className="fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center space-y-4">
           <button className="absolute top-4 right-4" onClick={toggleMenu}>
-            <FaTimes size={24} />
+            <FaTimes size={24} className="text-black dark:text-white" />
           </button>
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
-              activeSection === 'home' ? 'border-b-2 border-cyan-400' : ''
-            }`}
-            onClick={() => {
-              setActiveSection('home');
-              toggleMenu();
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
-              activeSection === 'about' ? 'border-b-2 border-cyan-400' : ''
-            }`}
-            onClick={() => {
-              setActiveSection('about');
-              toggleMenu();
-            }}
-          >
-            About
-          </Link>
-          <Link
-            to="work"
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
-              activeSection === 'work' ? 'border-b-2 border-cyan-400' : ''
-            }`}
-            onClick={() => {
-              setActiveSection('work');
-              toggleMenu();
-            }}
-          >
-            Work
-          </Link>
-          <Link
-            to="skills"
-            smooth={true}
-            duration={500}
-            offset={-70}
-            className={`text-2xl hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
-              activeSection === 'skills' ? 'border-b-2 border-cyan-400' : ''
-            }`}
-            onClick={() => {
-              setActiveSection('skills');
-              toggleMenu();
-            }}
-          >
-            Skills
-          </Link>
+          {['home', 'about', 'work', 'skills'].map((section) => (
+            <Link
+              key={section}
+              to={section}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              spy={true}
+              activeClass="active"
+              onSetActive={handleSetActive}
+              className={`text-2xl text-black dark:text-gray-200 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
+                activeSection === section ? 'border-b-2 border-cyan-400' : ''
+              }`}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

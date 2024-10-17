@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, livePreview, imageUrl }) => {
       <img
         src={imageUrl}
         alt={title}
-        className="h-42 w-72 object-cover rounded-2xl mb-6"
+        className="object-cover rounded-2xl mb-6"
       />
       <h3 className="text-xl font-semibold text-cyan-600 mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
@@ -46,7 +46,7 @@ const ProjectCard = ({ title, description, livePreview, imageUrl }) => {
         href={livePreview}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block mt-10 rounded-3xl bg-black px-6 py-3 text-center font-semibold text-[#5bcef1] animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white"
+          className="inline-block mt-10 rounded-3xl bg-black dark:bg-cyan-300 px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-white animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
       >
         Live Demo
       </a>
@@ -80,27 +80,27 @@ const App = () => {
   }, []);
 
   return (
-    <div name="work" id="work" className="px-5 md:px-10 py-10">
+    <div name="work" id="work" className="px-5 md:px-10 py-10 bg-white dark:bg-slate-800">
       <div className="text-center mb-8">
         <h2
-          className="text-3xl font-bold md:text-5xl text-gray-400"
+          className="text-3xl font-bold md:text-5xl text-gray-400 dark:text-white"
           data-aos="fade-up" // Animation for the title
         >
           Works
         </h2>
-        <div className="w-24 h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
+        <div className="w-[9rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         <p
-          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto"
+          className="mb-8 max-w-lg text-sm text-gray-500 dark:text-gray-300 sm:text-base lg:mb-24 text-center mx-auto"
           data-aos="fade-up" // Animation for the paragraph
           data-aos-delay="100" // Slight delay for staggered effect
         >
           Hi, I am Phok Pisethsambo, nice to meet you. Please take a look around.
         </p>
       </div>
-
+  
       <ProjectsGrid projects={sampleProjects} />
     </div>
   );
-};
-
-export default App;
+  };
+  
+  export default App;
