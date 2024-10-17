@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import 'aos/dist/aos.css'; // Import AOS styles
-import FlashIcon from '../assets/flash.svg';
 
 import HTML from '../assets/html.png';
 import CSS from '../assets/css.png';
@@ -58,7 +57,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              className='bg-gray-100 p-6 rounded-lg transform hover:scale-105 hover:bg-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50'
+              className='bg-gray-100 p-6 rounded-xl transform hover:scale-105 hover:bg-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500/50'
               data-aos="fade-up" // Animation for each skill card
               data-aos-delay={index * 100} // Stagger effect for each skill
             >
@@ -68,56 +67,10 @@ const Skills = () => {
           ))}
         </div>
         <footer className="block mt-10">
-        <div className="py-16 md:py-20 mx-auto w-full max-w-7xl px-5 md:px-10">
+        <div className="py-16 md:py-20 mx-auto w-full max-w-7xl px-9 md:px-10">
           <div className="flex-col flex items-center" data-aos="fade-up" data-aos-delay="300">
-            <a href="#home" className="flex items-center font-extrabold text-cyan-400">
-              <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" />
-              <span className="text-xl">Atomic</span>
-            </a>
-            <div className="text-center font-semibold">
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
-              >
-                Work
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-block px-6 py-2 font-normal text-gray-500 transition hover:text-cyan-300"
-              >
-                Skills
-              </a>
-            </div>
-            <div className="mb-8 mt-8 border-b border-gray-300 w-48"></div>
-            <div className="flex items-center space-x-4 mb-4">
+            <div className="mb-8 mt-8 border-b border-gray-300 w-48">
+            <div className="flex items-center ml-11 space-x-4 mb-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
                 <FaGithub size={24} />
               </a>
@@ -127,6 +80,7 @@ const Skills = () => {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-cyan-400 transition-colors duration-300">
                 <FaFacebook size={24} />
               </a>
+            </div>
             </div>
             <p className="text-sm sm:text-base">
               © Date 09/10/2024. By PHOK PISETHSAMBO.

@@ -30,10 +30,16 @@ const sampleProjects = [
 const ProjectCard = ({ title, description, livePreview, imageUrl }) => {
   return (
     <div
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 p-6 text-center"
-      data-aos="fade-up" // Apply AOS animation on each card
+      className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 p-6 text-center"
+      data-aos="zoom-in" // Apply AOS animation on each card for zoom effect
+      data-aos-duration="800" // Duration for the animation
+      data-aos-easing="ease-in-out" // Easing style for smooth animation
     >
-      <img src={imageUrl} alt={title} className="w-full h-56 object-cover rounded-lg mb-6" />
+      <img
+        src={imageUrl}
+        alt={title}
+        className="h-42 w-72 object-cover rounded-2xl mb-6"
+      />
       <h3 className="text-xl font-semibold text-cyan-600 mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <a
@@ -66,9 +72,10 @@ const App = () => {
   // Initialize AOS on component mount
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Whether animation should happen only once or every time you scroll
-      mirror: false, // Whether elements should animate out while scrolling past them
+      duration: 1000, // Animation duration for all elements
+      once: true, // Animation occurs only once when scrolled into view
+      mirror: false, // Elements will not animate out when scrolling past them
+      offset: 100, // Offset from the top of the viewport to start animation earlier
     });
   }, []);
 
@@ -83,7 +90,7 @@ const App = () => {
         </h2>
         <div className="w-24 h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         <p
-          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto" // Center alignment
+          className="mb-8 max-w-lg text-sm text-gray-500 sm:text-base lg:mb-24 text-center mx-auto"
           data-aos="fade-up" // Animation for the paragraph
           data-aos-delay="100" // Slight delay for staggered effect
         >
