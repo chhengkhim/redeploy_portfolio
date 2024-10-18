@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="flex items-center gap-3">
         {/* Logo */}
         <Link to="home" smooth={true} duration={500} className="flex items-center font-extrabold text-black dark:text-white cursor-pointer">
-          <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" /> {/* SVG icon */}
+          <img src={FlashIcon} alt="Flash Icon" className="mr-2 h-6 w-6" />
           <span className="text-xl">Atomic</span>
         </Link>
 
@@ -56,14 +56,14 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-70}
-            spy={true} // Track the scroll position
-            activeClass="active" // Class when active
-            onSetActive={handleSetActive} // Updates activeSection when scrolled
+            spy={true}
+            activeClass="active"
+            onSetActive={handleSetActive}
             className={`px-4 py-2 text-black dark:text-white transition-colors duration-300 cursor-pointer ${
-              activeSection === section ? 'border-b-2 border-black dark:border-cyan-400' : ''
+              activeSection === section ? 'border-b-2 border-black dark:border-cyan-400 inline-block' : ''
             }`}
           >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
+            <span className="inline-block">{section.charAt(0).toUpperCase() + section.slice(1)}</span>
           </Link>
         ))}
       </div>
@@ -85,10 +85,7 @@ const Navbar = () => {
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center space-y-4">
-          <button className="absolute top-4 right-4" onClick={toggleMenu}>
-            <FaTimes size={24} className="text-black dark:text-white" />
-          </button>
+        <div className="absolute right-3 top-14 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 z-50">
           {['home', 'about', 'work', 'skills'].map((section) => (
             <Link
               key={section}
@@ -99,8 +96,9 @@ const Navbar = () => {
               spy={true}
               activeClass="active"
               onSetActive={handleSetActive}
-              className={`text-2xl text-black dark:text-gray-200 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300 cursor-pointer ${
-                activeSection === section ? 'border-b-2 border-cyan-400' : ''
+              onClick={toggleMenu}  // Close menu on click
+              className={`block text-lg text-black dark:text-gray-200 py-2 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300 ${
+                activeSection === section ? 'border-b-2 border-cyan-400 inline-block' : ''
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
