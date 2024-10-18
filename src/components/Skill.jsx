@@ -89,7 +89,7 @@ const Skills = () => {
                   e.preventDefault();
                   document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-block mt-10 rounded-3xl bg-gray-600 dark:bg-white px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-cyan-300 animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
+                className="inline-block mt-10 rounded-3xl bg-gray-200 dark:bg-white px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-cyan-300 animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
                 data-aos="zoom-in"
                 data-aos-delay="500"
                 data-aos-duration="800"
@@ -105,13 +105,13 @@ const Skills = () => {
       <footer className="mt-16 py-10 bg-white dark:bg-slate-800 text-gray-900 dark:text-white">
         <div className="container mx-auto text-center">
           <div className="flex justify-center space-x-8 mb-8">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-blue-400 dark:hover:text-cyan-400 transition-colors duration-300">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300">
               <FaGithub size={28} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-blue-400 dark:hover:text-cyan-400 transition-colors duration-300">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300">
               <FaLinkedin size={28} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-blue-400 dark:hover:text-cyan-400 transition-colors duration-300">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-300 hover:text-cyan-400 dark:hover:text-cyan-400 transition-colors duration-300">
               <FaFacebook size={28} />
             </a>
           </div>

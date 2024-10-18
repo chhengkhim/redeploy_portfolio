@@ -46,7 +46,7 @@ const ProjectCard = ({ title, description, livePreview, imageUrl }) => {
         href={livePreview}
         target="_blank"
         rel="noopener noreferrer"
-          className="inline-block mt-10 rounded-3xl bg-black dark:bg-cyan-300 px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-white animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
+          className="inline-block mt-10 rounded-3xl bg-gray-600 dark:bg-cyan-300 px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-white animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
       >
         Live Demo
       </a>

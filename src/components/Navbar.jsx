@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
-import { Link, scroller } from 'react-scroll'; // Import Link and scroller from react-scroll
+import { Link } from 'react-scroll'; // Import Link and scroller from react-scroll
 import FlashIcon from '../assets/flash.svg'; // Update path as necessary
 import { ModeToggle } from './mode-toggle'; // Assuming this controls dark mode
 
@@ -85,7 +85,7 @@ const Navbar = () => {
 
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center space-y-4">
+        <div className="fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-600 z-50 flex flex-col items-center justify-center space-y-4">
           <button className="absolute top-4 right-4" onClick={toggleMenu}>
             <FaTimes size={24} className="text-black dark:text-white" />
           </button>

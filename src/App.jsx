@@ -1,15 +1,16 @@
-import "./App.css";
-import About from "./components/About";
-import Home from "./components/Home";
+// src/App.js
+
 import Navbar from "./components/Navbar";
-import Skills from "./components/Skill";
+import Home from "./components/Home";
+import About from "./components/About";
 import Work from "./components/Work";
+import Skills from "./components/Skill";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const App = () => {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="dark:bg-slate-800 bg-white">
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <div className="dark:bg-gray-600 bg-white text-gray-900 dark:text-white">
         <Navbar />
         <Home />
         <About />

@@ -1,3 +1,5 @@
+// src/components/theme-provider.js
+
 import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -20,7 +22,6 @@ export function ThemeProvider({
 
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
@@ -28,10 +29,9 @@ export function ThemeProvider({
         ? "dark"
         : "light";
       root.classList.add(systemTheme);
-      return;
+    } else {
+      root.classList.add(theme);
     }
-
-    root.classList.add(theme);
   }, [theme]);
 
   const value = {
@@ -49,20 +49,18 @@ export function ThemeProvider({
   );
 }
 
-// Add prop types for validation
+// PropTypes validation
 ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
   defaultTheme: PropTypes.string,
   storageKey: PropTypes.string,
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
+// Custom hook for using the theme context
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
-
   if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
-
   return context;
 };
