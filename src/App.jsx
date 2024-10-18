@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const App = () => {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <div className="dark:bg-gray-600 bg-white text-gray-900 dark:text-white">
+      <div className="dark:bg-slate-800 bg-white text-gray-900 dark:text-white">
         <Navbar />
         <Home />
         <About />
