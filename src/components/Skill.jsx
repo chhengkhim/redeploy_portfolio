@@ -30,7 +30,7 @@ const Skills = () => {
     { img: Sql, name: "Sql" },
     { img: Js, name: "Java Script" },
     { img: Cpp, name: "C++" },
-    { img: Figma, name: "Figma"},
+    { img: Figma, name: "Figma" }
   ];
 
   useEffect(() => {
@@ -43,13 +43,13 @@ const Skills = () => {
   }, []);
 
   return (
-    <div name="skills" id="skills" className="w-full py-20 bg-white dark:bg-slate-800 text-gray-900 dark:text-white">
+    <div name="skills" id="skills" className="w-full py-16 bg-white dark:bg-slate-800 text-gray-900 dark:text-white">
       <div className="text-center mb-8">
         <h2
           className="text-3xl font-bold md:text-5xl text-gray-900 dark:text-gray-100"
           data-aos="fade-up" // Animation for the title
         >
-        Skills
+          Skills
         </h2>
         <div className="w-[8rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         <p
@@ -66,21 +66,28 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-gray-700 dark:bg-slate-800 border border-gray-600 dark:border-slate-700 p-4 rounded-xl shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-center items-center"
+            className="flex flex-col items-center gap-3 rounded-xl p-6 sm:p-8 bg-gray-800 dark:bg-slate-900 shadow-lg shadow-cyan-400 dark:shadow-cyan-600 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500 text-base text-gray-600 dark:text-gray-300 text-center"
             data-aos="fade-up"
             data-aos-delay={index * 100}
+            style={{ height: 'auto' }} // Adjust height dynamically based on content
           >
-            {/* Circular Image */}
-            <div className="flex justify-center mb-4">
-              <div className="w-14 h-14 rounded-full bg-gray-700 dark:bg-slate-600 flex items-center justify-center">
-                <img className="w-10 h-10 object-contain" src={skill.img} alt={`${skill.name} icon`} />
+            {/* Card Content Animation */}
+            <div
+              className="transform transition-all duration-300 hover:scale-110 hover:rotate-3 hover:opacity-90" // Scaling, rotation, and opacity on hover
+              data-aos="zoom-in" // Zoom animation when scrolling
+            >
+              {/* Circular Image */}
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-gray-700 dark:bg-slate-600 flex items-center justify-center">
+                  <img className="w-8 h-8 object-contain" src={skill.img} alt={`${skill.name} icon`} />
+                </div>
               </div>
-            </div>
 
-            {/* Skill Name and Description */}
-            <div className="text-center mb-4">
-              <h3 className="text-lg font-semibold text-white dark:text-gray-200 mb-2">{skill.name}</h3>
-              <p className="text-gray-400 dark:text-white text-sm">A brief description about {skill.name} technology.</p>
+              {/* Skill Name */}
+              <div className="text-center mb-2">
+                <h3 className="text-md font-semibold text-white dark:text-gray-200 mb-1">{skill.name}</h3>
+                <p className="text-gray-400 dark:text-cyan-300 text-xs">A brief description about {skill.name}.</p>
+              </div>
             </div>
           </div>
         ))}
