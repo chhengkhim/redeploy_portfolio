@@ -9,12 +9,13 @@ import CSS from '../assets/css.png';
 import Php from '../assets/php.png';
 import ReactLogo from '../assets/react.png';
 import Laravel from '../assets/laravel.png';
-import GitHub from '../assets/github.png';
+import GitHub from '../assets/github2.png';
 import Tailwind from '../assets/tailwind.png';
 import Bootstrap from '../assets/boostrap.png';
 import Sql from '../assets/sql.png';
 import Js from '../assets/js.png';
-import Cpp from "../assets/c++.png";
+import Cpp from '../assets/c++.png';
+import Figma from '../assets/figma.png';
 
 const Skills = () => {
   const skills = [
@@ -29,6 +30,7 @@ const Skills = () => {
     { img: Sql, name: "Sql" },
     { img: Js, name: "Java Script" },
     { img: Cpp, name: "C++" },
+    { img: Figma, name: "Figma"},
   ];
 
   useEffect(() => {
@@ -79,23 +81,6 @@ const Skills = () => {
             <div className="text-center mb-4">
               <h3 className="text-lg font-semibold text-white dark:text-gray-200 mb-2">{skill.name}</h3>
               <p className="text-gray-400 dark:text-white text-sm">A brief description about {skill.name} technology.</p>
-            </div>
-
-            {/* Live Demo Button with Dark Mode Support */}
-            <div className="text-center mt-auto">
-              <a
-                href="#work" // This link corresponds to the Work section
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-block mt-10 rounded-3xl bg-gray-200 dark:bg-white px-6 py-3 text-center font-semibold text-[#5bcef1] dark:text-cyan-300 animate-fadeIn transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-cyan-400 hover:text-white dark:hover:bg-black"
-                data-aos="zoom-in"
-                data-aos-delay="500"
-                data-aos-duration="800"
-              >
-                Preview
-              </a>
             </div>
           </div>
         ))}
