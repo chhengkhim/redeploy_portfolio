@@ -20,7 +20,7 @@ const AboutSection = () => {
           >
             Abouts
           </h2>
-          <div className="w-[9rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
+          <div className="w-[10rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         </div>
         
         {/* Centered Paragraph */}
