@@ -100,13 +100,15 @@ const App = () => {
   return (
     <div name="work" id="work" className="px-5 md:px-10 py-20 bg-white dark:bg-slate-800">
       <div className="text-center mb-12">
-        <h2
-          className="text-4xl font-bold text-gray-800 dark:text-white tracking-wide"
-          data-aos="fade-up"
-        >
-          My Projects
-        </h2>
-        <div className="w-16 h-1 bg-indigo-500 dark:bg-indigo-400 mx-auto my-6"></div>
+      <div className="text-center mb-8">
+          <h2
+            className="text-3xl font-bold md:text-5xl text-gray-800 dark:text-gray-100"
+            data-aos="fade-up" // Animation for the title
+          >
+            Works 
+          </h2>
+          <div className="w-[9rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
+        </div>
         <p
           className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           data-aos="fade-up"
