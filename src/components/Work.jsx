@@ -9,6 +9,12 @@ import Portfolio from '../assets/projects/portfolio.jpg'
 
 const sampleProjects = [
   {
+    title: 'Another Cafe Shop',
+    description: 'Welcome to our Portfolio Website.',
+    livePreview: 'https://atomic-portfolio.vercel.app',
+    imageUrl: Portfolio,
+  },
+  {
     title: 'Cafe Shop',
     description: 'Welcome to our cafe shop.',
     livePreview: '#',
@@ -19,12 +25,6 @@ const sampleProjects = [
     description: 'Welcome to our Railway website.',
     livePreview: '#',
     imageUrl: Railway,
-  },
-  {
-    title: 'Another Cafe Shop',
-    description: 'Welcome to our Portfolio Website.',
-    livePreview: 'https://atomic-portfolio.vercel.app',
-    imageUrl: Portfolio,
   },
 ];
 
