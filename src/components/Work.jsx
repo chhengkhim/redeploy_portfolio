@@ -9,7 +9,7 @@ import Portfolio from '../assets/projects/portfolio.jpg';
 
 const sampleProjects = [
   {
-    title: 'Another Cafe Shop',
+    title: 'Portfolio Website',
     description: 'Welcome to our Portfolio Website.',
     livePreview: 'https://atomic-portfolio.vercel.app',
     imageUrl: Portfolio,
