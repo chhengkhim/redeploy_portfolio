@@ -18,7 +18,7 @@ const AboutSection = () => {
             className="text-3xl font-bold md:text-5xl text-gray-800 dark:text-gray-100"
             data-aos="fade-up" // Animation for the title
           >
-            About
+            About 
           </h2>
           <div className="w-[9rem] h-1 bg-cyan-400 mx-auto mb-4" /> {/* Short cyan underline */}
         </div>
@@ -44,11 +44,12 @@ const AboutSection = () => {
 
           {/* Text Section */}
           <div
-            className="flex flex-col gap-5 rounded-3xl p-10 sm:p-20 bg-slate-100 dark:bg-slate-700 shadow-lg shadow-cyan-400 dark:shadow-cyan-600 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500 text-base text-gray-600 dark:text-gray-300 text-center"
+            className="flex-col gap-5 rounded-3xl p-10 sm:p-20 bg-slate-100 dark:bg-slate-700 shadow-lg shadow-cyan-400 dark:shadow-cyan-600 transition-shadow duration-300 hover:shadow-xl hover:shadow-cyan-500 text-base text-gray-600 dark:text-gray-300 text-center"
             data-aos="fade-left"
           >
-            <h2 className="text-3xl font-bold md:text-5xl text-gray-800 dark:text-gray-100">About</h2>
-            <p className="text-sm sm:text-base">
+            <h2 className="text-3xl font-bold md:text-5xl text-gray-800 dark:text-gray-100">About me</h2>
+            <div className="w-[14rem] h-1 bg-cyan-400 mx-auto mb-6" /> {/* Short cyan underline */}
+            <p className="text-sm sm:text-base flex">
               I’m passionate about building excellent software that enhances the lives of those around me.
               I specialize in creating solutions for clients ranging from individuals and small businesses to large enterprise corporations.
               Imagine having a software expert available at your fingertips—what could we achieve together?

@@ -57,7 +57,7 @@ const Skills = () => {
           data-aos="fade-up" // Animation for the paragraph
           data-aos-delay="100" // Slight delay for staggered effect
         >
-          Hi, I am Phok Pisethsambo, nice to meet you. Please take a look around.
+          Technologies I have worked with
         </p>
       </div>
 
