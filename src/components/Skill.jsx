@@ -46,7 +46,7 @@ const Skills = () => {
     <div name="skills" id="skills" className="w-full py-16 bg-white dark:bg-slate-800 text-gray-900 dark:text-white">
       <div className="text-center mb-8">
         <h2
-          className="text-3xl font-bold md:text-5xl text-gray-900 dark:text-gray-100"
+          className="text-3xl font-bold md:text-5xl text-gray-500 dark:text-gray-100"
           data-aos="fade-up" // Animation for the title
         >
           Skills

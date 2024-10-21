@@ -49,10 +49,10 @@ const ProjectCard = ({ title, description, livePreview, imageUrl }) => {
 
       {/* Card Content */}
       <div className="p-6 relative z-10">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 transition-transform duration-300 group-hover:translate-y-2">
+        <h3 className="text-xl font-semibold text-gray-500 dark:text-cyan-400 mb-2 transition-transform duration-300 group-hover:translate-y-2">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-gray-500 dark:text-gray-300 mb-4">
           {description}
         </p>
         <a
@@ -102,7 +102,7 @@ const App = () => {
       <div className="text-center mb-12">
       <div className="text-center mb-8">
           <h2
-            className="text-3xl font-bold md:text-5xl text-gray-800 dark:text-gray-100"
+            className="text-3xl font-bold md:text-5xl text-gray-500 dark:text-gray-100"
             data-aos="fade-up" // Animation for the title
           >
             Works 
