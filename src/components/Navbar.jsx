@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="max-w-6xl mx-auto p-8 text-center sticky top-0 z-50 flex items-center gap-3 justify-between w-full h-16 bg-cyan-200 dark:bg-slate-500 shadow-none border-none rounded-full">
+    <nav className="max-w-6xl mx-auto p-8 text-center sticky top-0 z-50 flex items-center gap-3 justify-between w-full h-16 bg-cyan-200 dark:bg-slate-600 shadow-none border-none rounded-full">
       {/* Logo and Dark Mode Toggle for Desktop */}
       <div className="flex items-center gap-3">
         {/* Logo */}
